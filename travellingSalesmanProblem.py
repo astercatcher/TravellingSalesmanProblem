@@ -13,8 +13,8 @@ def TSP_Greedy(recent,notVisited,weight):
     notVisited.remove(recent)
 
     if len(notVisited) == 1:
-      l = notVisited.pop()
-      cost =  weight[recent][l] + weight[l][0]
+      g = notVisited.pop()
+      cost =  weight[recent][g] + weight[g][0]
       return cost
       
     else:
