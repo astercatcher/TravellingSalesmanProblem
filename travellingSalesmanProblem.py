@@ -28,10 +28,10 @@ def TSP_Greedy(recent,notVisited,distance):
           dis[i] = 31 #設成大於1~30區間的數值
 
 
+
 #Dynamic Programming
 def TSP_DP(num, weight):
   notVisited = set([c for c in range(1,num)])
-
   D = {}
 
   for i in range(1,num):
@@ -57,6 +57,8 @@ def TSP_DP(num, weight):
     key = str(j)+str(v)
     every.append(weight[0][j]+D[key])
   return min(every)
+
+
 
 #generate weight graph
 def randomGraph(n):
