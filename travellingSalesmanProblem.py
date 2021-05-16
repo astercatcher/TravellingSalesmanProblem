@@ -9,20 +9,20 @@ import matplotlib.pyplot as plt
 from itertools import combinations
 
 #Greedy
-def TSP_Greedy(recent,notVisited,distance):
+def TSP_Greedy(recent,notVisited,weight):
     notVisited.remove(recent)
 
     if len(notVisited) == 1:
       l = notVisited.pop()
-      cost =  distance[recent][l] + distance[l][0]
+      cost =  weight[recent][l] + weight[l][0]
       return cost
       
     else:
-      dis = distance[recent][:]
+      dis = weight[recent][:]
       while True:
         i = np.argmin(dis) #min index
         if i in notVisited:
-          cost = TSP_Greedy(i,notVisited,distance) + distance[recent][i]
+          cost = TSP_Greedy(i,notVisited,weight) + weight[recent][i]
           return cost
         else:
           dis[i] = 31 #設成大於1~30區間的數值
