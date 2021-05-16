@@ -37,7 +37,7 @@ def TSP_DP(num, weight):
   for i in range(1,num):
     D[str(i)+"set()"] = weight[i][0]
 
-  for k in range(1,num):
+  for k in range(1,num-1):
     for A in combinations(notVisited,k):
       for i in notVisited:
         if i not in A:
